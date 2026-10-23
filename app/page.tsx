@@ -243,15 +243,18 @@ export default function Home() {
                   className="mt-8 flex items-center gap-5"
                 >
                   <button
+                    type="button"
                     onClick={() => router.push("/contact-us")}
-                    className="group inline-flex h-[54px] items-center gap-4 rounded-[4px] bg-[#214f78] px-7 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#173e60]"
+                    className="group inline-flex h-[54px] shrink-0 items-center gap-4 rounded-[4px] bg-[#214f78] px-7 text-[14px] font-semibold text-white! transition-colors duration-300 hover:bg-[#173e60]"
                   >
-                    Talk to Alpha
+                    Contact Us
                     <ArrowRight
                       size={17}
                       className="transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden="true"
                     />
                   </button>
+
                   <button
                     onClick={() => router.push("/services")}
                     className="group inline-flex h-[54px] items-center gap-4 px-1 text-[14px] font-semibold text-[#183247]"
@@ -511,12 +514,18 @@ export default function Home() {
                 </p>
                 <div className="mt-7 flex flex-col items-start gap-3 min-[430px]:flex-row min-[430px]:items-center">
                   <button
+                    type="button"
                     onClick={() => router.push("/contact-us")}
-                    className="inline-flex h-[52px] items-center gap-4 rounded-[4px] bg-[#214f78] px-6 text-[14px] font-semibold text-white"
+                    className="group inline-flex h-[54px] shrink-0 items-center gap-4 rounded-[4px] bg-[#214f78] px-7 text-[14px] font-semibold text-white! transition-colors duration-300 hover:bg-[#173e60]"
                   >
-                    Talk to Alpha
-                    <ArrowRight size={16} />
+                    Contact Us
+                    <ArrowRight
+                      size={17}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
                   </button>
+
                   <button
                     onClick={() => router.push("/services")}
                     className="inline-flex h-[52px] items-center gap-3 px-1 text-[14px] font-semibold text-[#183247]"
@@ -621,9 +630,16 @@ export default function Home() {
                           onClick={() => setMobileActiveFeature(index)}
                           className="flex flex-col items-center"
                         >
-                          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#edf3f6] text-[#2d7fa8]">
+                          <div
+                            className={`flex h-14 w-14 items-center justify-center rounded-full transition-colors duration-300 ${
+                              isActive
+                                ? "bg-[#2d7fa8] text-white"
+                                : "bg-[#e4eff4] text-[#2d7fa8]"
+                            }`}
+                          >
                             <Icon size={24} strokeWidth={1.8} />
                           </div>
+
                           <span
                             className={`mt-3 h-[2px] rounded-full transition-all duration-300 ${
                               isActive

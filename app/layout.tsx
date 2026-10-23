@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
@@ -17,9 +18,24 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Alpha Capital Compliance",
+  metadataBase: new URL("https://alphaccl.co.uk"),
+
+  title:
+    "Alpha Capital Compliance | Financial Services Compliance Consultancy",
+
   description:
-    "Practical compliance and regulatory support for financial services firms.",
+    "Alpha Capital Compliance provides financial services compliance consultancy, regulatory support, compliance documentation and money laundering prevention advice.",
+
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "Alpha Capital Compliance",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${cormorant.variable} ${manrope.variable} bg-[#f8f7f2] text-[#10283b] antialiased`}
       >

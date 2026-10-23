@@ -6,7 +6,14 @@ const navigation = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: "/pricing" },
   { label: "Services", href: "/services" },
-  { label: "Recruitment", href: "/recruitment" },
+  {
+    label: "Recruitment – Candidates",
+    href: "/recruitment/candidates",
+  },
+  {
+    label: "Recruitment – Companies",
+    href: "/recruitment/companies",
+  },
   { label: "About Us", href: "/about-us" },
   { label: "Contact Us", href: "/contact-us" },
 ];
@@ -96,6 +103,7 @@ export default function Footer() {
               <Image
                 src="/alphanewlogo.png"
                 alt="Alpha Capital Compliance"
+                loading="eager"
                 fill
                 sizes="214px"
                 className="object-contain p-2"
